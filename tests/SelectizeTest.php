@@ -8,12 +8,9 @@ use PHPForge\Support\Assert;
 use Yii;
 use Yii2\Extensions\Selectize\Selectize;
 use Yii2\Extensions\Selectize\Tests\Support\SelectizeModel;
-use yii\web\View;
 
 final class SelectizeTest extends TestCase
 {
-    private View $view;
-
     public function setup(): void
     {
         parent::setUp();
