@@ -22,7 +22,6 @@ class Selectize extends InputWidget
      */
     public function run(): string
     {
-
         $html = match ($this->type) {
             static::TYPE_SELECT => $this->generateDropdownList(),
             static::TYPE_TEXT => $this->generateTextInput(),
