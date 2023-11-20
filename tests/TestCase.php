@@ -16,6 +16,7 @@ use yii\web\View;
 abstract class TestCase extends \PHPUnit\Framework\TestCase
 {
     protected View $view;
+
     /**
      * Clean up after test.
      * By default the application created with [[mockApplication]] will be destroyed.
