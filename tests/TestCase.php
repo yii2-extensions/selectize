@@ -8,12 +8,14 @@ use PHPForge\Support\Assert;
 use Yii;
 use yii\di\Container;
 use yii\web\Application;
+use yii\web\View;
 
 /**
  * This is the base class for all yii framework unit tests.
  */
 abstract class TestCase extends \PHPUnit\Framework\TestCase
 {
+    protected View $view;
     /**
      * Clean up after test.
      * By default the application created with [[mockApplication]] will be destroyed.
@@ -58,5 +60,7 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
         Yii::$app = null;
         Yii::$container = new Container();
         Assert::removeFilesFromDirectory(__DIR__ . '/Support/runtime');
+
+        unset($this->view);
     }
 }
