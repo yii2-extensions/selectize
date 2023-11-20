@@ -14,6 +14,9 @@ class Selectize extends InputWidget
 
     public const TYPE_SELECT = 'select';
     public const TYPE_TEXT = 'text';
+    /**
+     * @phpstan-var array<array-key, mixed>
+     */
     public array $items = [];
     public string $type = self::TYPE_SELECT;
 

@@ -17,6 +17,8 @@ final class SelectizeAsset extends AssetBundle
 
     /**
      * @inheritdoc
+     *
+     * @phpstan-var array<array-key, mixed>
      */
     public $css = [
         'css/selectize.bootstrap5.css',
@@ -24,6 +26,8 @@ final class SelectizeAsset extends AssetBundle
 
     /**
      * @inheritdoc
+     *
+     * @phpstan-var array<array-key, mixed>
      */
     public $js = [
         'js/selectize.js',
@@ -31,6 +35,8 @@ final class SelectizeAsset extends AssetBundle
 
     /**
      * @inheritdoc
+     *
+     * @phpstan-var array<array-key, mixed>
      */
     public $depends = [
         BootstrapPluginAsset::class,

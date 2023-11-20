@@ -11,6 +11,9 @@ use yii\web\JsExpression;
 
 trait RegisterClientScript
 {
+    /**
+     * @phpstan-var array<array-key, mixed>
+     */
     public array $clientOptions = [];
     public string $loadUrl = '';
     public string $queryParam = 'query';

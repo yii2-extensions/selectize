@@ -89,7 +89,7 @@ Selectize::widget(
 ## Quality code
 
 [![static-analysis](https://github.com/yii2-extensions/selectize/actions/workflows/static.yml/badge.svg)](https://github.com/yii2-extensions/selectize/actions/workflows/static.yml)
-[![phpstan-level](https://img.shields.io/badge/PHPStan%20level-5-blue)](https://github.com/yii2-extensions/selectize/actions/workflows/static.yml)
+[![phpstan-level](https://img.shields.io/badge/PHPStan%20level-7-blue)](https://github.com/yii2-extensions/selectize/actions/workflows/static.yml)
 [![StyleCI](https://github.styleci.io/repos/720718108/shield?branch=main)](https://github.styleci.io/repos/720718108?branch=main)
 
 ## Support versions Yii2
