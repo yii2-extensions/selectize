@@ -2,20 +2,21 @@
 
 declare(strict_types=1);
 
-error_reporting(-1);
-
-$rootDir = dirname(__DIR__, 2);
-$vendorDir = $rootDir . '/' . 'vendor';
-
 defined('YII_DEBUG') || define('YII_DEBUG', false);
 define('YII_ENV', 'test');
 
-$_SERVER['SCRIPT_NAME'] = '/' . __DIR__;
-$_SERVER['SCRIPT_FILENAME'] = __FILE__;
+$root = dirname(__DIR__, 2);
 
-if (!file_exists($vendorDir . '/autoload.php')) {
-    die('Please run composer install');
+$autoload = $root . '/vendor/autoload.php';
+$yii2 = $root . '/vendor/yiisoft/yii2/Yii.php';
+
+if (!is_file($autoload)) {
+    die('You need to set up the project dependencies using Composer');
 }
 
-require_once $vendorDir . '/autoload.php';
-require_once $vendorDir . '/yiisoft/yii2/Yii.php';
+if (!is_file($yii2)) {
+    die('You need to set up yii2 using composer');
+}
+
+require_once $autoload;
+require_once $yii2;
