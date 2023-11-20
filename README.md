@@ -44,7 +44,7 @@ to the require-dev section of your `composer.json` file.
 
 ## Usage
 
-### DropdownList 
+### Dropdown list 
 
 ```php
 use Yii2\Extension\Selectize\Selectize;
