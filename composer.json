@@ -1,5 +1,5 @@
 {
-    "name": "yii2-extension/selectize",
+    "name": "yii2-extensions/selectize",
     "type": "library",
     "description": "Selectize widget for Yii Framework 2",
     "keywords": [
