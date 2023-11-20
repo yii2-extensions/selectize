@@ -1,41 +1,61 @@
 {
-    "name": "yii2/template",
+    "name": "yii2-extension/selectize",
     "type": "library",
-    "description": "_____",
+    "description": "Selectize widget for Yii Framework 2",
     "keywords": [
-        "_____"
+        "yii2",
+        "selectize",
+        "widget"
     ],
     "license": "mit",
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
         "php": ">=8.1",
-        "yiisoft/yii2": "^2.2"
+        "npm-asset/selectize--selectize": "^0.15.2",
+        "oomphinc/composer-installers-extender": "^2.0",
+        "yii2-extensions/asset-bootstrap5": "dev-main",
+        "yiisoft/yii2": "*"
     },
     "require-dev": {
         "maglnet/composer-require-checker": "^4.6",
+        "php-forge/support": "dev-main",
         "phpunit/phpunit": "^10.2",
+        "roave/infection-static-analysis-plugin": "^1.32",
         "yii2-extensions/phpstan": "dev-main"
     },
     "autoload": {
         "psr-4": {
-            "yii\\template\\": "src"
+            "Yii2\\Extensions\\Selectize\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "yii\\template\\tests\\": "tests"
+            "Yii2\\Extensions\\Selectize\\Tests\\": "tests"
         }
     },
     "extra": {
         "branch-alias": {
             "dev-main": "1.0.x-dev"
+        },
+        "installer-types": [
+            "bower-asset",
+            "npm-asset"
+        ],
+        "installer-paths": {
+            "./node_modules/{$name}/": [
+                "type:bower-asset",
+                "type:npm-asset"
+            ]
         }
     },
     "config": {
         "sort-packages": true,
         "allow-plugins": {
-            "yiisoft/yii2-composer": true
+            "yiisoft/yii2-composer": true,
+            "composer/installers": true,
+            "oomphinc/composer-installers-extender": true,
+            "infection/extension-installer": true
         }
     },
     "scripts": {
