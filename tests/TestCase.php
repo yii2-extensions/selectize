@@ -34,7 +34,7 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
                     '@bower' => '@root/node_modules',
                     '@npm' => '@root/node_modules',
                 ],
-                'basePath' => __DIR__,
+                'basePath' => dirname(__DIR__),
                 'components' => [
                     'assetManager' => [
                         'basePath' => __DIR__ . '/Support/runtime',
