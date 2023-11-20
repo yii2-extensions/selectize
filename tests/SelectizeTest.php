@@ -19,6 +19,8 @@ final class SelectizeTest extends TestCase
         parent::setUp();
         $this->mockApplication();
 
+        Selectize::$counter = 0;
+
         $this->view = Yii::$app->getView();
     }
 
@@ -138,7 +140,7 @@ final class SelectizeTest extends TestCase
 
     public function testLoadUrl(): void
     {
-        $selectizeDropdownList = Selectize::widget(
+        $selectize = Selectize::widget(
             [
                 'attribute' => 'tags',
                 'loadUrl' => '/tags',
@@ -146,12 +148,7 @@ final class SelectizeTest extends TestCase
             ],
         );
 
-        $render = $this->view->renderFile(
-            __DIR__ . '/Support/main.php',
-            [
-                'widget' => $selectizeDropdownList,
-            ],
-        );
+        $render = $this->view->renderFile(__DIR__ . '/Support/main.php', ['widget' => $selectize]);
 
         Assert::equalsWithoutLE(
             <<<HTML
@@ -159,7 +156,7 @@ final class SelectizeTest extends TestCase
 
             </select>
             HTML,
-            $selectizeDropdownList,
+            $selectize,
         );
 
         $this->assertStringContainsString(
@@ -202,19 +199,14 @@ final class SelectizeTest extends TestCase
 
     public function testRender(): void
     {
-        $selectizeDropdownList = Selectize::widget(
+        $selectize = Selectize::widget(
             [
                 'attribute' => 'tags',
                 'model' => new SelectizeModel(),
             ],
         );
 
-        $render = $this->view->renderFile(
-            __DIR__ . '/Support/main.php',
-            [
-                'widget' => $selectizeDropdownList,
-            ],
-        );
+        $render = $this->view->renderFile(__DIR__ . '/Support/main.php', ['widget' => $selectize]);
 
         Assert::equalsWithoutLE(
             <<<HTML
@@ -222,7 +214,7 @@ final class SelectizeTest extends TestCase
 
             </select>
             HTML,
-            $selectizeDropdownList,
+            $selectize,
         );
 
         $this->assertStringContainsString(
@@ -264,14 +256,9 @@ final class SelectizeTest extends TestCase
 
     public function testWithoutModel(): void
     {
-        $selectizeDropdownList = Selectize::widget(['name' => 'tags']);
+        $selectize = Selectize::widget(['name' => 'tags']);
 
-        $render = $this->view->renderFile(
-            __DIR__ . '/Support/main.php',
-            [
-                'widget' => $selectizeDropdownList,
-            ],
-        );
+        $render = $this->view->renderFile(__DIR__ . '/Support/main.php', ['widget' => $selectize]);
 
         Assert::equalsWithoutLE(
             <<<HTML
@@ -279,7 +266,7 @@ final class SelectizeTest extends TestCase
 
             </select>
             HTML,
-            $selectizeDropdownList,
+            $selectize,
         );
 
         $this->assertStringContainsString(
@@ -300,7 +287,7 @@ final class SelectizeTest extends TestCase
 
         Assert::equalsWithoutLE(
             <<<HTML
-            <select id="w1" name="tags">
+            <select id="w0" name="tags">
 
             </select>
             HTML,
@@ -310,7 +297,7 @@ final class SelectizeTest extends TestCase
         $this->assertStringContainsString(
             <<<JS
             <script>jQuery(function ($) {
-            jQuery('#w1').selectize([]);
+            jQuery('#w0').selectize([]);
             });</script>
             JS,
             $render,
