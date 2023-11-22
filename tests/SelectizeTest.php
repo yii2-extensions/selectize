@@ -140,7 +140,7 @@ final class SelectizeTest extends TestCase
         $selectize = Selectize::widget(
             [
                 'attribute' => 'tags',
-                'loadUrl' => '/tags',
+                'loadUrl' => ['/tags'],
                 'model' => new SelectizeModel(),
             ],
         );
@@ -158,8 +158,14 @@ final class SelectizeTest extends TestCase
 
         $this->assertStringContainsString(
             <<<JS
-            <script>jQuery(function ($) {
-            jQuery('#selectizemodel-tags').selectize({"load":function (query, callback) { if (!query.length) return callback(); $.getJSON('/tags', { query: query }, function (data) { callback(data); }).fail(function () { callback(); }); }});
+            jQuery('#selectizemodel-tags').selectize({"load":function (query, callback) {
+                if (!query.length) return callback();
+                $.getJSON('/index.php?r=tags', { query: query }, function (data) {
+                    callback(data);
+                }).fail(function () {
+                    callback();
+                });
+            }});
             });</script>
             JS,
             $render,
@@ -171,7 +177,7 @@ final class SelectizeTest extends TestCase
         $selectize = Selectize::widget(
             [
                 'attribute' => 'tags',
-                'loadUrl' => '/tags',
+                'loadUrl' => ['/tags'],
                 'model' => new SelectizeModel(),
                 'type' => Selectize::TYPE_TEXT,
             ],
@@ -187,7 +193,14 @@ final class SelectizeTest extends TestCase
         $this->assertStringContainsString(
             <<<JS
             <script>jQuery(function ($) {
-            jQuery('#selectizemodel-tags').selectize({"load":function (query, callback) { if (!query.length) return callback(); $.getJSON('/tags', { query: query }, function (data) { callback(data); }).fail(function () { callback(); }); }});
+            jQuery('#selectizemodel-tags').selectize({"load":function (query, callback) {
+                if (!query.length) return callback();
+                $.getJSON('/index.php?r=tags', { query: query }, function (data) {
+                    callback(data);
+                }).fail(function () {
+                    callback();
+                });
+            }});
             });</script>
             JS,
             $render,
