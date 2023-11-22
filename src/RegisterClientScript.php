@@ -15,6 +15,9 @@ trait RegisterClientScript
      * @phpstan-var array<array-key, mixed>
      */
     public array $clientOptions = [];
+    /**
+     * @phpstan-var array<array-key, string>
+     */
     public array $loadUrl = [];
     public string $queryParam = 'query';
 
