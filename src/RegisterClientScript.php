@@ -15,17 +15,29 @@ trait RegisterClientScript
      * @phpstan-var array<array-key, mixed>
      */
     public array $clientOptions = [];
-    public string $loadUrl = '';
+    /**
+     * @phpstan-var array<array-key, string>
+     */
+    public array $loadUrl = [];
     public string $queryParam = 'query';
 
     public function registerClientScript(): void
     {
         $id = $this->options['id'];
 
-        if ($this->loadUrl !== '') {
+        if ($this->loadUrl !== []) {
             $url = Url::to($this->loadUrl);
             $this->clientOptions['load'] = new JsExpression(
-                "function (query, callback) { if (!query.length) return callback(); $.getJSON('$url', { {$this->queryParam}: query }, function (data) { callback(data); }).fail(function () { callback(); }); }"
+                $loadFunction = <<<JS
+                function (query, callback) {
+                    if (!query.length) return callback();
+                    $.getJSON('$url', { {$this->queryParam}: query }, function (data) {
+                        callback(data);
+                    }).fail(function () {
+                        callback();
+                    });
+                }
+                JS
             );
         }
 
@@ -34,6 +46,10 @@ trait RegisterClientScript
 
         SelectizeAsset::register($view);
 
-        $view->registerJs("jQuery('#$id').selectize($options);");
+        $view->registerJs(
+            <<<JS
+            jQuery('#$id').selectize($options);
+            JS
+        );
     }
 }
