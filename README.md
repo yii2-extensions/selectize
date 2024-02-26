@@ -30,14 +30,14 @@ The preferred way to install this extension is through [composer](https://getcom
 
 Either run
 
-```
-composer require --dev --prefer-dist yii2-extensions/selectize
+```shell
+composer require --prefer-dist yii2-extensions/selectize:^0.1
 ```
 
 or add
 
-```
-"yii2-extensions/selectize": "dev-main"
+```json
+"yii2-extensions/selectize": "^0.1"
 ```
 
 to the require-dev section of your `composer.json` file.
