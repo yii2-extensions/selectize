@@ -107,4 +107,4 @@ Selectize::widget(
 
 ## License
 
-The MIT License. Please see [License File](LICENSE.md) for more information.
+The MIT License. Please see [License File](LICENSE) for more information.
