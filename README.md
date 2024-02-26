@@ -40,7 +40,7 @@ or add
 "yii2-extensions/selectize": "^0.1"
 ```
 
-to the require-dev section of your `composer.json` file.
+to the require section of your `composer.json` file.
 
 ## Usage
 
