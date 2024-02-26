@@ -11,7 +11,6 @@
     "require": {
         "php": ">=8.1",
         "npm-asset/selectize--selectize": "^0.15.2",
-        "oomphinc/composer-installers-extender": "^2.0",
         "yii2-extensions/asset-bootstrap5": "^0.1",
         "yiisoft/yii2": "^2.0.49 || ^2.2"
     },
@@ -35,16 +34,6 @@
     "extra": {
         "branch-alias": {
             "dev-main": "0.1-dev"
-        },
-        "installer-types": [
-            "bower-asset",
-            "npm-asset"
-        ],
-        "installer-paths": {
-            "./node_modules/{$name}/": [
-                "type:bower-asset",
-                "type:npm-asset"
-            ]
         }
     },
     "config": {

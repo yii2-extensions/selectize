@@ -34,8 +34,8 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
                 'id' => 'testapp',
                 'aliases' => [
                     '@root' => dirname(__DIR__),
-                    '@bower' => '@root/node_modules',
-                    '@npm' => '@root/node_modules',
+                    '@bower' => '@vendor/bower-asset',
+                    '@npm' => '@vendor/npm-asset',
                 ],
                 'basePath' => dirname(__DIR__),
                 'components' => [
