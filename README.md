@@ -99,7 +99,7 @@ Selectize::widget(
 
 ## Testing
 
-[Check the documentation testing](/docs/testing.md) to learn about testing.
+[Check the documentation testing](docs/testing.md) to learn about testing.
 
 ## Our social networks
 

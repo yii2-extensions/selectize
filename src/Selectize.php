@@ -20,9 +20,7 @@ class Selectize extends InputWidget
     public array $items = [];
     public string $type = self::TYPE_SELECT;
 
-    /**
-     * @inheritdoc
-     */
+
     public function run(): string
     {
         $html = match ($this->type) {

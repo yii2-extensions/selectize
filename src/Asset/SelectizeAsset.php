@@ -10,14 +10,9 @@ use yii\web\JqueryAsset;
 
 final class SelectizeAsset extends AssetBundle
 {
-    /**
-     * @inheritdoc
-     */
     public $sourcePath = '@npm/selectize--selectize/dist';
 
     /**
-     * @inheritdoc
-     *
      * @phpstan-var array<array-key, mixed>
      */
     public $css = [
@@ -25,8 +20,6 @@ final class SelectizeAsset extends AssetBundle
     ];
 
     /**
-     * @inheritdoc
-     *
      * @phpstan-var array<array-key, mixed>
      */
     public $js = [
@@ -34,8 +27,6 @@ final class SelectizeAsset extends AssetBundle
     ];
 
     /**
-     * @inheritdoc
-     *
      * @phpstan-var array<array-key, mixed>
      */
     public $depends = [
