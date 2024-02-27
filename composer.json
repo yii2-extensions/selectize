@@ -19,7 +19,8 @@
         "php-forge/support": "^0.1",
         "phpunit/phpunit": "^10.5",
         "roave/infection-static-analysis-plugin": "^1.34",
-        "yii2-extensions/phpstan": "dev-main"
+        "symplify/easy-coding-standard": "^12.1",
+        "yii2-extensions/phpstan": "^0.1"
     },
     "autoload": {
         "psr-4": {
@@ -47,6 +48,7 @@
     },
     "scripts": {
         "check-dependencies": "composer-require-checker",
+        "ecs": "ecs check",
         "mutation": "roave-infection-static-analysis-plugin",
         "phpstan": "phpstan",
         "test": "phpunit"
