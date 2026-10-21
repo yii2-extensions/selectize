@@ -13,7 +13,7 @@
   `yii2\extensions\selectize\asset\BootstrapAsset`. Applications that use the former bundles elsewhere must require
   `yii2-extensions/asset-bootstrap5` themselves.
 - Move a `js` override of `SelectizeAsset` to `yii2\extensions\selectize\asset\SelectizeRuntimeAsset`.
-- Use `yiiSelectize(settings)` to initialize or reinitialize rendered fields manually.
+- Use `jQuery(element).yiiSelectize(settings)` to initialize or reinitialize rendered fields manually.
 - In custom Selectize plugins, use `Object.hasOwn(map, key)` for `options`, `optgroups`, `userOptions`, `renderCache`
   and `loadedSearches`; these maps no longer have a prototype.
 - Supply JSON objects in option `data-data` metadata. Submitted identifiers always come from the HTML option value.

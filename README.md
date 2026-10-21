@@ -40,14 +40,16 @@ application manager when it already supplies those assets.
 Place this in a Yii view and associate the input with a visible label:
 
 ```php
+use yii\helpers\Html;
 use yii2\extensions\selectize\Selectize;
 
+echo Html::label('Category', 'category');
 echo Selectize::widget(
     [
         'name' => 'category',
         'value' => 'yii',
         'items' => ['php' => 'PHP', 'yii' => 'Yii'],
-        'options' => ['prompt' => 'Choose a category'],
+        'options' => ['id' => 'category', 'prompt' => 'Choose a category'],
         'clientOptions' => ['maxItems' => 1],
     ],
 );

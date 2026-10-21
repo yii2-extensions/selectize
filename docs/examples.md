@@ -137,9 +137,9 @@ final class PostController extends Controller
 
 ## Clear and reinitialize
 
-Give touch users an accessible way to clear a single selection, and reinitialize through `yiiSelectize()` after
-replacing markup so the widget keeps its accessible attributes. See [events and lifecycle](lifecycle.md) for fragment
-replacement and custom handlers.
+Give touch users an accessible way to clear a single selection, and reinitialize through
+`jQuery(element).yiiSelectize()` after replacing markup so the widget keeps its accessible attributes. See
+[events and lifecycle](lifecycle.md) for fragment replacement and custom handlers.
 
 ```js
 document.getElementById("clear-remote").addEventListener("click", function () {
