@@ -1,44 +1,157 @@
 # Testing
 
-## Checking dependencies
+This package provides a consistent set of [Composer](https://getcomposer.org/) scripts for local validation.
 
-This package uses [composer-require-checker](https://github.com/maglnet/ComposerRequireChecker) to check if all dependencies are correctly defined in `composer.json`.
+Install the checkout dependencies with `composer install --prefer-dist` after following the
+[installation guide](installation.md). Foxy uses its native PHP manager for the published browser assets; the PHP checks
+require no Node.js build.
 
-To run the checker, execute the following command:
+Tool references:
 
-```shell
-composer run check-dependencies
+- [Actionlint](https://github.com/rhysd/actionlint) for GitHub Actions workflow linting.
+- [Codespell](https://github.com/codespell-project/codespell) for spelling checks.
+- [Composer Require Checker](https://github.com/maglnet/ComposerRequireChecker) for dependency definition checks.
+- [Easy Coding Standard (ECS)](https://github.com/easy-coding-standard/easy-coding-standard) for coding standards.
+- [EditorConfig Checker](https://github.com/editorconfig-checker/editorconfig-checker) for EditorConfig compliance.
+- [Gitleaks](https://github.com/gitleaks/gitleaks) for secret scanning.
+- [Infection](https://infection.github.io/) for mutation testing.
+- [Markdownlint-cli2](https://github.com/DavidAnson/markdownlint-cli2) for Markdown linting.
+- [PHPStan](https://phpstan.org/) for static analysis.
+- [PHPUnit](https://phpunit.de/) for unit tests.
+- [Prettier](https://prettier.io/) for Markdown and YAML formatting checks.
+- [Yamllint](https://github.com/adrienverge/yamllint) for YAML linting.
+- [Zizmor](https://github.com/zizmorcore/zizmor) for GitHub Actions security audits.
+
+## Coding standards (ECS)
+
+Check coding standards without modifying files.
+
+```bash
+composer ecs-check
 ```
 
-## Easy coding standard
+Apply coding standard fixes. Review the changes before keeping them.
 
-The code is checked with [Easy Coding Standard](https://github.com/easy-coding-standard/easy-coding-standard) and
-[PHP CS Fixer](https://github.com/PHP-CS-Fixer/PHP-CS-Fixer). To run it:
-
-```shell
-composer run ecs
+```bash
+composer ecs
 ```
 
-## Mutation testing
+## Dependency definition check
 
-Mutation testing is checked with [Infection](https://infection.github.io/). To run it:
+Verify that runtime dependencies are correctly declared in `composer.json`.
 
-```shell
-composer run mutation
+```bash
+composer check-dependencies
 ```
 
-## Static analysis
+## Mutation testing (Infection)
 
-The code is statically analyzed with [Phpstan](https://phpstan.org/). To run static analysis:
+Run mutation testing.
 
-```shell
-composer run phpstan
+```bash
+composer mutation
 ```
 
-## Unit tests
+Run mutation testing with PHPStan static analysis enabled.
 
-The code is tested with [PHPUnit](https://phpunit.de/). To run tests:
+```bash
+composer mutation-static
+```
 
+Thresholds, thread count and memory options live in `infection.json.dist`. CI enforces the same thresholds.
+
+## Repository quality checks
+
+Make the CLI tools used by the shared quality workflow available on `PATH`: actionlint with its ShellCheck helper,
+codespell, EditorConfig Checker, markdownlint-cli2, Prettier and yamllint. Run all checks:
+
+```bash
+composer quality
 ```
-composer run test
+
+Each tool also has its own script:
+
+```bash
+composer actionlint
+composer codespell
+composer editorconfig-checker
+composer markdownlint
+composer prettier
+composer yamllint
 ```
+
+The linter configuration lives in `.github/linters`, and the Prettier configuration in `.prettierrc.json` and
+`.prettierignore`. CI uses the same files.
+
+## Static analysis (PHPStan)
+
+Run static analysis.
+
+```bash
+composer static
+```
+
+## Unit tests (PHPUnit)
+
+Run the full test suite.
+
+```bash
+composer tests
+```
+
+## Workflow security checks
+
+Make zizmor and Gitleaks available on `PATH`. Audit the current workflow files with the same pedantic persona used by
+the shared security workflow:
+
+```bash
+composer zizmor
+```
+
+Scan Git history for secrets with the repository's Gitleaks configuration:
+
+```bash
+composer gitleaks
+```
+
+Run both checks. Findings make the command fail; inspect them rather than disabling the checks.
+
+```bash
+composer security
+```
+
+Zizmor needs GitHub API access for its online audits. If the tool runs offline, report that limit separately. To request
+an offline audit explicitly:
+
+```bash
+composer zizmor -- --offline
+```
+
+Report hosted CI execution and its PHP/OS matrix separately from these local commands. Keep generated reports in ignored
+`internal/`.
+
+## Passing extra arguments
+
+Composer scripts support forwarding additional arguments using `--`.
+
+Run PHPUnit with code coverage report generation.
+
+```bash
+composer tests -- --coverage-html internal/coverage
+```
+
+Run PHPStan with a different memory limit.
+
+```bash
+composer static -- --memory-limit=512M
+```
+
+## Browser and form flows
+
+Exercise the forms in a consuming application with each supported Yii line and its selected manager. Check keyboard and
+mobile interaction, server validation, remote data, failure recovery and repeated initialization. Record the PHP, Yii
+and browser versions exercised.
+
+The existing `test` and `phpstan` script names remain aliases of `tests` and `static`.
+
+[Back to documentation](../README.md#documentation)

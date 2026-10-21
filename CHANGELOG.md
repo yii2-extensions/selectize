@@ -1,13 +1,18 @@
-# Change Log
+# Changelog
 
-## 0.1.2 Under development
+All notable changes to this project will be documented in this file.
 
-- Bug #9: Add new StyleCI rules for empty loop body braces and integer literal case (@terabytesoftw)
+The format is based on [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/), and this project adheres
+to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+## 0.2.0 Under development
+
+- feat!: rework Selectize runtime, integration, accessibility and packaging; move to `yii2\extensions\selectize` namespace; require PHP `8.3`.
 
 ## 0.1.1 February 27, 2024
 
-- Bug #8: Update dependencies and fix coding standards issues (@terabytesoftw)
+- fix: update dependencies and coding standards issues.
 
 ## 0.1.0 February 26, 2024
 
-- Initial release.
+- feat: initial development release.

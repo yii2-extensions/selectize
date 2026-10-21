@@ -1,5 +1,5 @@
 includes:
-	- vendor/yii2-extensions/phpstan/extension.neon
+    - vendor/yii2-extensions/phpstan/extension.neon
 parameters:
     dynamicConstantNames:
         - YII_DEBUG
@@ -9,6 +9,8 @@ parameters:
         - YII_ENV_TEST
 
     level: 7
+
+    phpVersion: 80300
 
     paths:
         - src
