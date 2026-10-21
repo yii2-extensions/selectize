@@ -2,17 +2,28 @@
     "name": "yii2-extensions/selectize",
     "type": "library",
     "description": "Selectize widget for Yii Framework 2",
+    "homepage": "https://github.com/yii2-extensions/selectize",
     "keywords": [
-        "yii2",
+        "autocomplete",
+        "bootstrap5",
         "selectize",
-        "widget"
+        "tags",
+        "widget",
+        "yii2",
+        "yii2-extension"
     ],
-    "license": "mit",
+    "license": "BSD-3-Clause",
+    "support": {
+        "issues": "https://github.com/yii2-extensions/selectize/issues",
+        "source": "https://github.com/yii2-extensions/selectize",
+        "docs": "https://github.com/yii2-extensions/selectize/tree/main/docs"
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
     "require": {
-        "php": ">=8.1",
-        "npm-asset/selectize--selectize": "^0.15.2",
-        "yii2-extensions/asset-bootstrap5": "^0.1",
-        "yiisoft/yii2": "^2.0.49 || ^2.2"
+        "php": ">=8.3",
+        "php-forge/foxy": "^0.4",
+        "yiisoft/yii2": "~2.0.55 || ^22.0@dev"
     },
     "require-dev": {
         "maglnet/composer-require-checker": "^4.7",
@@ -20,21 +31,25 @@
         "phpunit/phpunit": "^10.5",
         "roave/infection-static-analysis-plugin": "^1.34",
         "symplify/easy-coding-standard": "^12.1",
-        "yii2-extensions/phpstan": "^0.1"
+        "yii2-extensions/phpstan": "^0.5"
     },
     "autoload": {
         "psr-4": {
-            "Yii2\\Extensions\\Selectize\\": "src"
+            "yii2\\extensions\\selectize\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Yii2\\Extensions\\Selectize\\Tests\\": "tests"
+            "yii2\\extensions\\selectize\\tests\\": "tests"
         }
     },
     "extra": {
         "branch-alias": {
-            "dev-main": "0.1-dev"
+            "dev-main": "0.2.x-dev"
+        },
+        "foxy": true,
+        "skills": {
+            "source": "skills"
         }
     },
     "config": {
@@ -43,15 +58,68 @@
             "yiisoft/yii2-composer": true,
             "composer/installers": true,
             "oomphinc/composer-installers-extender": true,
-            "infection/extension-installer": true
+            "infection/extension-installer": true,
+            "php-forge/foxy": true
+        },
+        "foxy": {
+            "manager": "native",
+            "native-install-dir": "vendor/npm-asset"
         }
     },
     "scripts": {
-        "check-dependencies": "composer-require-checker",
-        "ecs": "ecs check",
-        "mutation": "roave-infection-static-analysis-plugin",
-        "phpstan": "phpstan",
-        "test": "phpunit"
+        "actionlint": "actionlint",
+        "check-dependencies": "composer-require-checker check",
+        "codespell": "codespell --config .github/linters/.codespellrc",
+        "ecs": "ecs check --fix",
+        "ecs-check": "ecs check --ansi",
+        "editorconfig-checker": "editorconfig-checker -config .github/linters/.editorconfig-checker.json",
+        "gitleaks": "gitleaks git --config .github/linters/.gitleaks.toml --redact",
+        "markdownlint": "markdownlint-cli2 --config .github/linters/.markdown-lint.yml '**/*.md'",
+        "mutation": [
+            "Composer\\Config::disableProcessTimeout",
+            "@php -d memory_limit=-1 vendor/bin/infection"
+        ],
+        "mutation-static": "@mutation --static-analysis-tool=phpstan",
+        "phpstan": "@static",
+        "prettier": "prettier --check --config .prettierrc.json --ignore-path .prettierignore '**/*.md' '**/*.{yml,yaml}'",
+        "quality": [
+            "@actionlint",
+            "@codespell",
+            "@editorconfig-checker",
+            "@markdownlint",
+            "@prettier",
+            "@yamllint"
+        ],
+        "security": [
+            "@zizmor",
+            "@gitleaks"
+        ],
+        "static": "phpstan --memory-limit=-1",
+        "test": "@tests",
+        "tests": "phpunit",
+        "yamllint": "yamllint -c .github/linters/.yamllint.yml .github",
+        "zizmor": "zizmor --persona=pedantic .github"
+    },
+    "scripts-descriptions": {
+        "actionlint": "Lints GitHub Actions workflows with actionlint.",
+        "check-dependencies": "Verifies that used symbols are declared as Composer dependencies.",
+        "codespell": "Checks spelling with codespell.",
+        "ecs": "Applies coding standard fixes with ECS.",
+        "ecs-check": "Checks coding standards with ECS without modifying files.",
+        "editorconfig-checker": "Checks files against the EditorConfig rules.",
+        "gitleaks": "Scans Git history for secrets with Gitleaks.",
+        "markdownlint": "Lints Markdown files with markdownlint-cli2.",
+        "mutation": "Runs mutation testing with Infection.",
+        "mutation-static": "Runs mutation testing with Infection and PHPStan static analysis.",
+        "phpstan": "Alias of the static script.",
+        "prettier": "Checks Markdown and YAML formatting with Prettier.",
+        "quality": "Runs all repository quality checks.",
+        "security": "Runs the workflow security and secret scanning checks.",
+        "static": "Runs static analysis with PHPStan.",
+        "test": "Alias of the tests script.",
+        "tests": "Runs PHPUnit.",
+        "yamllint": "Lints YAML files with yamllint.",
+        "zizmor": "Audits GitHub Actions workflows with zizmor."
     },
     "repositories": [
         {

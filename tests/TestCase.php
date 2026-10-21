@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Yii2\Extensions\Selectize\Tests;
+namespace yii2\extensions\selectize\tests;
 
 use PHPForge\Support\Assert;
 use Yii;
@@ -17,10 +17,6 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
 {
     protected View $view;
 
-    /**
-     * Clean up after test.
-     * By default the application created with [[mockApplication]] will be destroyed.
-     */
     protected function tearDown(): void
     {
         parent::tearDown();
@@ -40,7 +36,7 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
                 'basePath' => dirname(__DIR__),
                 'components' => [
                     'assetManager' => [
-                        'basePath' => __DIR__ . '/Support/runtime',
+                        'basePath' => __DIR__ . '/support/runtime',
                         'baseUrl' => '/',
                     ],
                     'request' => [
@@ -60,7 +56,8 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
     {
         Yii::$app = null;
         Yii::$container = new Container();
-        Assert::removeFilesFromDirectory(__DIR__ . '/Support/runtime');
+
+        Assert::removeFilesFromDirectory(__DIR__ . '/support/runtime');
 
         unset($this->view);
     }

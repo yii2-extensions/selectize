@@ -1,35 +1,24 @@
+---
 on:
-  pull_request:
+  pull_request: &ignore-paths
     paths-ignore:
-      - 'docs/**'
-      - 'README.md'
-      - 'CHANGELOG.md'
-      - '.gitignore'
-      - '.gitattributes'
-      - 'infection.json.dist'
-      - 'phpunit.xml.dist'
-      - 'psalm.xml'
+      - ".gitattributes"
+      - ".gitignore"
+      - "CHANGELOG.md"
+      - "docs/**"
+      - "README.md"
 
-  push:
-    paths-ignore:
-      - 'docs/**'
-      - 'README.md'
-      - 'CHANGELOG.md'
-      - '.gitignore'
-      - '.gitattributes'
-      - 'infection.json.dist'
-      - 'phpunit.xml.dist'
-      - 'psalm.xml'
+  push: *ignore-paths
 
 name: Composer require checker
 
+permissions:
+  contents: read
+
 jobs:
   composer-require-checker:
-    uses: php-forge/actions/.github/workflows/composer-require-checker.yml@main
+    uses: yii2-framework/actions/.github/workflows/composer-require-checker.yml@f0e06ea5cc965cff4431177d448add7b7c98668b # v2.0.1
     with:
-      composer-command: |
-        composer require yiisoft/yii2:^2.2.x-dev --prefer-dist --no-progress --no-interaction --no-scripts --ansi
-      os: >-
-        ['ubuntu-latest']
-      php: >-
-        ['8.1']
+      composer-command: require yiisoft/yii2:^22.0@dev yiisoft/yii2-jquery:^1.0@dev
+      extensions: bcmath, dom, intl, mbstring, sodium, zlib
+      php-version: '["8.3"]'
