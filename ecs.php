@@ -22,13 +22,13 @@ return ECSConfig::configure()
             __DIR__ . '/tests',
         ],
     )
-    ->withPhpCsFixerSets(perCS20: true)
     ->withPreparedSets(
-        cleanCode: true,
+        psr12: true,
+        perCs: true,
         comments:true,
         docblocks: true,
         namespaces: true,
-        psr12: true
+        cleanCode: true,
     )
     ->withRules(
         [
