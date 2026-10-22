@@ -8,6 +8,7 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ## 0.2.1 Under development
 
 - docs: integrate hosted guides, API and skill; align package metadata and BSD license detection.
+- docs: update `README.md` with new logo, improve title, and add security badge.
 
 ## 0.2.0 October 22, 2026
 

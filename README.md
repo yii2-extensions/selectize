@@ -1,10 +1,16 @@
+<!-- markdownlint-disable MD041 -->
 <p align="center">
     <a href="https://github.com/yii2-extensions/selectize" target="_blank">
-        <img src="https://www.yiiframework.com/image/yii_logo_light.svg" height="100px;" alt="Yii logo">
+        <picture>
+            <source media="(prefers-color-scheme: dark)" srcset="https://www.yiiframework.com/image/design/logo/yii3_full_for_dark.svg">
+            <source media="(prefers-color-scheme: light)" srcset="https://www.yiiframework.com/image/design/logo/yii3_full_for_light.svg">
+            <img src="https://www.yiiframework.com/image/design/logo/yii3_full_for_light.svg" alt="Yii Framework" width="80%">
+        </picture>
     </a>
-    <h1 align="center">Selectize.</h1>
+    <h1 align="center">Selectize widget</h1>
     <br>
 </p>
+<!-- markdownlint-enable MD041 -->
 
 <p align="center">
     <a href="https://github.com/yii2-extensions/selectize/actions/workflows/build.yml" target="_blank">
@@ -16,10 +22,15 @@
     <a href="https://github.com/yii2-extensions/selectize/actions/workflows/static.yml" target="_blank">
         <img src="https://img.shields.io/github/actions/workflow/status/yii2-extensions/selectize/static.yml?style=for-the-badge&label=PHPStan&logo=github" alt="PHPStan">
     </a>
+    <a href="https://github.com/yii2-extensions/selectize/actions/workflows/security.yml" target="_blank">
+        <img src="https://img.shields.io/github/actions/workflow/status/yii2-extensions/selectize/security.yml?style=for-the-badge&label=Security&logo=github" alt="Security">
+    </a>
 </p>
 
-Selectize selects and text inputs for Yii models and forms, with Bootstrap 5 styling, multiple values, remote JSON
-choices and lifecycle cleanup.
+<p align="center">
+    <strong>Selectize selects and text inputs for Yii models and forms</strong><br>
+    <em>Bootstrap 5 styling, multiple values, remote JSON choices and lifecycle cleanup</em>
+</p>
 
 ## Quick start
 
@@ -116,7 +127,8 @@ The hosted documentation covers Yii 22.0. If it does not match the installed rev
 
 [![Codecov](https://img.shields.io/codecov/c/github/yii2-extensions/selectize.svg?style=for-the-badge&logo=codecov&logoColor=white&label=Coverage)](https://codecov.io/github/yii2-extensions/selectize)
 [![PHPStan Level 7](https://img.shields.io/badge/PHPStan-Level%207-4F5D95.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/yii2-extensions/selectize/actions/workflows/static.yml)
-[![StyleCI](https://img.shields.io/badge/StyleCI-Passed-44CC11.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.styleci.io/repos/720718108?branch=main)
+[![Quality](https://img.shields.io/github/actions/workflow/status/yii2-extensions/selectize/quality.yml?style=for-the-badge&label=Quality&logo=github)](https://github.com/yii2-extensions/selectize/actions/workflows/quality.yml)
+[![ECS](https://img.shields.io/github/actions/workflow/status/yii2-extensions/selectize/ecs.yml?style=for-the-badge&label=ECS&logo=github)](https://github.com/yii2-extensions/selectize/actions/workflows/ecs.yml)
 
 ## Our social networks
 
