@@ -1,8 +1,8 @@
 {
     "name": "yii2-extensions/selectize",
     "type": "library",
-    "description": "Selectize widget for Yii Framework 2",
-    "homepage": "https://github.com/yii2-extensions/selectize",
+    "description": "Selectize widgets for Yii2 with ActiveForm, remote JSON choices, Bootstrap 5 styling, and lifecycle cleanup.",
+    "homepage": "https://yii2-framework.github.io/docs/extensions/selectize/",
     "keywords": [
         "autocomplete",
         "bootstrap5",
@@ -16,7 +16,7 @@
     "support": {
         "issues": "https://github.com/yii2-extensions/selectize/issues",
         "source": "https://github.com/yii2-extensions/selectize",
-        "docs": "https://github.com/yii2-extensions/selectize/tree/main/docs"
+        "docs": "https://yii2-framework.github.io/docs/extensions/selectize/"
     },
     "require": {
         "php": ">=8.3",

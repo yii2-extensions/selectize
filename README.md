@@ -86,6 +86,9 @@ Practical guides and examples for widget configuration, forms and remote choices
 - 🔄 [Upgrade Guide](UPGRADE.md)
 - 🧪 [Testing Guide](docs/testing.md)
 
+The guides and the [API reference](https://yii2-framework.github.io/docs/extensions/selectize/reference/) generated from
+the PHPDoc in `src/` are published at <https://yii2-framework.github.io/docs/extensions/selectize/>.
+
 ## AI assistance
 
 AI agents: read the [documentation index](https://yii2-framework.github.io/docs/llms.txt) and fetch the Markdown version
