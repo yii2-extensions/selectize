@@ -6,12 +6,12 @@ namespace yii2\extensions\selectize\tests;
 
 use PHPUnit\Framework\Attributes\TestWith;
 use Yii;
+use yii\base\InvalidArgumentException;
+use yii\web\{AssetBundle, JqueryAsset, JsExpression, View};
 use yii2\extensions\selectize\asset\{BootstrapAsset, SelectizeAsset, SelectizeIntegrationAsset, SelectizeRuntimeAsset};
 use yii2\extensions\selectize\exception\Message;
 use yii2\extensions\selectize\Selectize;
 use yii2\extensions\selectize\tests\support\SelectizeModel;
-use yii\base\InvalidArgumentException;
-use yii\web\{AssetBundle, JqueryAsset, JsExpression, View};
 
 /**
  * Unit tests for the {@see Selectize} widget markup, client integration settings, asset bundles and type validation.

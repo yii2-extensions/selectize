@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace yii2\extensions\selectize;
 
-use yii2\extensions\selectize\asset\SelectizeIntegrationAsset;
 use yii\helpers\{Json, Url};
 use yii\web\JsExpression;
+use yii2\extensions\selectize\asset\SelectizeIntegrationAsset;
 
 /**
  * Registers per-widget client settings and the optional remote loader.
