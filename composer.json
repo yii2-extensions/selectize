@@ -14,9 +14,9 @@
     ],
     "license": "BSD-3-Clause",
     "support": {
+        "docs": "https://yii2-framework.github.io/docs/extensions/selectize/",
         "issues": "https://github.com/yii2-extensions/selectize/issues",
-        "source": "https://github.com/yii2-extensions/selectize",
-        "docs": "https://yii2-framework.github.io/docs/extensions/selectize/"
+        "source": "https://github.com/yii2-extensions/selectize"
     },
     "require": {
         "php": ">=8.3",
