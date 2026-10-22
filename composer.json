@@ -18,8 +18,6 @@
         "source": "https://github.com/yii2-extensions/selectize",
         "docs": "https://github.com/yii2-extensions/selectize/tree/main/docs"
     },
-    "minimum-stability": "stable",
-    "prefer-stable": true,
     "require": {
         "php": ">=8.3",
         "php-forge/foxy": "^0.4",
@@ -45,7 +43,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-main": "0.2.x-dev"
+            "dev-main": "0.3.x-dev"
         },
         "foxy": true,
         "skills": {

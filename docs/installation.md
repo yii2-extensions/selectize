@@ -39,13 +39,13 @@ Keep `@bower` for other application bundles if they still use it.
 Install with Composer:
 
 ```shell
-composer require --prefer-dist yii2-extensions/selectize:dev-main
+composer require --prefer-dist yii2-extensions/selectize:^0.2
 ```
 
 To select Yii 22, explicitly allow its development version in the root app:
 
 ```shell
-composer require --prefer-dist yii2-extensions/selectize:dev-main "yiisoft/yii2:^22.0@dev"
+composer require --prefer-dist yii2-extensions/selectize:^0.2 yiisoft/yii2:^22.0@dev
 ```
 
 For the native directory above, merge the asset aliases into the Yii application configuration:

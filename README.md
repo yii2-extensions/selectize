@@ -29,7 +29,7 @@ Configure the consuming application's plugins and asset aliases with the [instal
 then install the documented branch:
 
 ```shell
-composer require --prefer-dist yii2-extensions/selectize:dev-main
+composer require --prefer-dist yii2-extensions/selectize:^0.2
 ```
 
 The native asset manager installs the published frontend assets without Node.js or a JavaScript build. Keep an existing
