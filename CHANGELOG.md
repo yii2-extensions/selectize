@@ -7,6 +7,8 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## 0.2.1 Under development
 
+- docs: integrate hosted guides, API and skill; align package metadata and BSD license detection.
+
 ## 0.2.0 October 22, 2026
 
 - feat!: rework Selectize runtime, integration, accessibility and packaging; move to `yii2\extensions\selectize` namespace; require PHP `8.3`.
