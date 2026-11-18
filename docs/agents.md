@@ -80,4 +80,34 @@ automatic selection depends on the client and model.
 
 Verify form validation, remote loading and cleanup in the consuming application after activating the skill.
 
+## Example prompts
+
+Start a fresh client session at the application root. The explicit example uses Codex's `$skill-name` notation; use
+`/yii2-selectize` in Claude Code or the installed client's native skill mechanism. Do not paste the skill body and count
+that as native activation. These are tasks to execute and verify, not claims that an evaluation has passed.
+
+### Explicit invocation
+
+```text
+$yii2-selectize
+Show a Selectize multiple field with model validation and safe redisplay of malformed nested input. Include remote
+load success/failure handling and the correct callback configuration for this package.
+Inspect the installed revision first. Do not install dependencies or change files without authorization.
+```
+
+### Natural selection
+
+```text
+After PJAX replacement my Selectize field loses edits or repeats handlers. How should I preserve selection and
+options while destroying and reinitializing only the affected widget?
+```
+
+### Verify the outcome
+
+Test cleared/malformed values, callback completion on error and repeated browser lifecycle behavior. Do not confuse
+text-mode strings with multiple-select arrays. Record native loading evidence separately from configuration review,
+executable checks and browser/runtime results. For a negative selection control, ask an unrelated question in a fresh
+session and confirm this package skill is not loaded. Keep evaluation traces private; report unavailable checks rather
+than treating discovery as execution.
+
 [Back to documentation](../README.md#documentation)

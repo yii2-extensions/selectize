@@ -8,6 +8,7 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ## 0.2.2 Under development
 
 - fix: make the BSD-3-Clause license recognizable without changing its terms or attribution.
+- docs: align `README.md` with the standard, add Scorecard, skill contracts and prompts, restore skill discovery, exclude dev state from archives.
 
 ## 0.2.1 October 23, 2026
 

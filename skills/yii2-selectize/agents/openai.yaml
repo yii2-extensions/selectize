@@ -1,0 +1,4 @@
+interface:
+  display_name: "Yii2 Selectize"
+  short_description: "Integrate Selectize widgets with Yii2 forms and remote data"
+  default_prompt: "Use $yii2-selectize to add a validated Selectize field to a Yii2 ActiveForm."
