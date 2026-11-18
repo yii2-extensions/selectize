@@ -2,7 +2,9 @@
 name: yii2-selectize
 description:
   Integrate yii2-extensions/selectize with Yii models, forms, remote JSON data
-  and repeatable widget lifecycles.
+  and repeatable widget lifecycles. Not for other Selectize wrappers or Tom
+  Select, Selectize releases other than the bundled 0.15.2 runtime, or
+  jQuery-free select components.
 ---
 
 # Selectize integration
@@ -105,6 +107,24 @@ Before fragment removal, call `destroy()` on each instance; cleanup aborts built
 restores label targets. Remove your own external listeners separately. For PJAX, destroy in `pjax:beforeReplace` and
 initialize after replacement, scoped to that container. Save current options and selection before destroying when
 reinitialization must preserve edits; upstream destruction restores the original option nodes.
+
+## Intended behavior
+
+These look like bugs and are package contracts; do not "fix" them in package or application code:
+
+- Registering the widget also registers `BootstrapAsset`, which publishes the full Bootstrap 5 `css/bootstrap.css` and
+  `js/bootstrap.bundle.js`. Override that bundle through `assetManager.bundles` when the layout already loads Bootstrap.
+- A non-empty `loadUrl` replaces any `clientOptions['load']`, and its loader returns without a request for an empty
+  query even when `preload` is `true`.
+- The built-in loader aborts the previous pending request for the same widget. A JSON response that is not an array
+  (such as `{"items": [...]}`) yields no options and is not cached; the same query can be retried.
+- `TYPE_TEXT` renders a plain text input and ignores `items`. A `type` other than `TYPE_SELECT` or `TYPE_TEXT` throws
+  `yii\base\InvalidArgumentException` (`Invalid type "..."`) when the widget runs.
+- Setting `clientEvents` throws `yii\base\UnknownPropertyException`; callbacks belong in `clientOptions`.
+
+`SelectizeIntegrationAsset` (the `yiiSelectize` plugin), the `RegisterClientScript` trait (`clientOptions`, `loadUrl`,
+`queryParam`) and `exception\Message` exist to support the widget; use them through `Selectize`, and override the asset
+bundles only to change paths or dependencies.
 
 ## Verification
 

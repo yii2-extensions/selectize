@@ -16,14 +16,14 @@
     <a href="https://github.com/yii2-extensions/selectize/actions/workflows/build.yml" target="_blank">
         <img src="https://img.shields.io/github/actions/workflow/status/yii2-extensions/selectize/build.yml?style=for-the-badge&label=PHPUnit&logo=github" alt="PHPUnit">
     </a>
+    <a href="https://codecov.io/github/yii2-extensions/selectize" target="_blank">
+        <img src="https://img.shields.io/codecov/c/github/yii2-extensions/selectize.svg?style=for-the-badge&logo=codecov&logoColor=white&label=Coverage" alt="Coverage">
+    </a>
     <a href="https://dashboard.stryker-mutator.io/reports/github.com/yii2-extensions/selectize/main" target="_blank">
         <img src="https://img.shields.io/endpoint?style=for-the-badge&url=https%3A%2F%2Fbadge-api.stryker-mutator.io%2Fgithub.com%2Fyii2-extensions%2Fselectize%2Fmain" alt="Mutation Testing">
     </a>
     <a href="https://github.com/yii2-extensions/selectize/actions/workflows/static.yml" target="_blank">
         <img src="https://img.shields.io/github/actions/workflow/status/yii2-extensions/selectize/static.yml?style=for-the-badge&label=PHPStan&logo=github" alt="PHPStan">
-    </a>
-    <a href="https://github.com/yii2-extensions/selectize/actions/workflows/security.yml" target="_blank">
-        <img src="https://img.shields.io/github/actions/workflow/status/yii2-extensions/selectize/security.yml?style=for-the-badge&label=Security&logo=github" alt="Security">
     </a>
 </p>
 
@@ -36,8 +36,9 @@
 
 ### Installation
 
-Configure the consuming application's plugins and asset aliases with the [installation guide](docs/installation.md),
-then install the documented branch:
+Configure the consuming application's plugins and asset aliases with the
+[installation guide](https://github.com/yii2-extensions/selectize/blob/main/docs/installation.md), then install the
+documented branch:
 
 ```shell
 composer require --prefer-dist yii2-extensions/selectize:^0.2
@@ -83,19 +84,22 @@ echo $form->field($model, 'tags')
 ```
 
 The model must validate `tags` as an array; browser options do not authorize submitted values. See
-[model validation](docs/configuration.md#model-validation-and-multiple-values) for cleared fields and rejected
-submissions.
+[model validation](https://github.com/yii2-extensions/selectize/blob/main/docs/configuration.md#model-validation-and-multiple-values)
+for cleared fields and rejected submissions.
 
 ## Documentation
 
 Practical guides and examples for widget configuration, forms and remote choices.
 
-- 📚 [Installation Guide](docs/installation.md): packages, managers and asset aliases.
-- ⚙️ [Configuration Guide](docs/configuration.md): model values, remote data and rendering.
-- 💡 [Usage Examples](docs/examples.md): validated, multiple, text and remote fields.
-- 🔁 [Events, Accessibility and Lifecycle](docs/lifecycle.md)
+- 📚 [Installation Guide](https://github.com/yii2-extensions/selectize/blob/main/docs/installation.md): packages,
+  managers and asset aliases.
+- ⚙️ [Configuration Guide](https://github.com/yii2-extensions/selectize/blob/main/docs/configuration.md): model values,
+  remote data and rendering.
+- 💡 [Usage Examples](https://github.com/yii2-extensions/selectize/blob/main/docs/examples.md): validated, multiple,
+  text and remote fields.
+- 🔁 [Events, Accessibility and Lifecycle](https://github.com/yii2-extensions/selectize/blob/main/docs/lifecycle.md)
 - 🔄 [Upgrade Guide](UPGRADE.md)
-- 🧪 [Testing Guide](docs/testing.md)
+- 🧪 [Testing Guide](https://github.com/yii2-extensions/selectize/blob/main/docs/testing.md)
 
 The guides and the [API reference](https://yii2-framework.github.io/docs/extensions/selectize/reference/) generated from
 the PHPDoc in `src/` are published at <https://yii2-framework.github.io/docs/extensions/selectize/>.
@@ -107,7 +111,9 @@ of a page by appending `index.md` to its URL. The
 [AI agents guide](https://yii2-framework.github.io/docs/project/ai-agents/) covers skill installation, client setup and
 verification.
 
-- 🤖 [`yii2-selectize` skill](docs/agents.md): Selectize widgets.
+- 🤖 [`yii2-selectize` skill](https://github.com/yii2-extensions/selectize/blob/main/docs/agents.md): Selectize selects
+  and text inputs with Foxy assets, model validation of multiple values, remote JSON loading, safe rendering and
+  repeatable lifecycle cleanup.
 - 🧭 [`yii2-framework` skill](https://yii2-framework.github.io/docs/guide/skills/yii2-framework/): Yii 22.0 application
   conventions.
 
@@ -125,10 +131,20 @@ The hosted documentation covers Yii 22.0. If it does not match the installed rev
 
 ## Project status
 
-[![Codecov](https://img.shields.io/codecov/c/github/yii2-extensions/selectize.svg?style=for-the-badge&logo=codecov&logoColor=white&label=Coverage)](https://codecov.io/github/yii2-extensions/selectize)
 [![PHPStan Level 7](https://img.shields.io/badge/PHPStan-Level%207-4F5D95.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/yii2-extensions/selectize/actions/workflows/static.yml)
 [![Quality](https://img.shields.io/github/actions/workflow/status/yii2-extensions/selectize/quality.yml?style=for-the-badge&label=Quality&logo=github)](https://github.com/yii2-extensions/selectize/actions/workflows/quality.yml)
 [![ECS](https://img.shields.io/github/actions/workflow/status/yii2-extensions/selectize/ecs.yml?style=for-the-badge&label=ECS&logo=github)](https://github.com/yii2-extensions/selectize/actions/workflows/ecs.yml)
+
+## Security
+
+[![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/yii2-extensions/selectize/badge?style=for-the-badge)](https://scorecard.dev/viewer/?uri=github.com/yii2-extensions/selectize)
+[![Zizmor](https://img.shields.io/github/actions/workflow/status/yii2-extensions/selectize/security.yml?style=for-the-badge&label=Zizmor&logo=github)](https://github.com/yii2-extensions/selectize/actions/workflows/security.yml)
+
+## Built with AI
+
+[![Built with Claude Code](https://img.shields.io/badge/Built%20with-Claude%20Code-D97757.svg?style=for-the-badge&logo=claude&logoColor=white)](https://claude.com/claude-code)
+[![Built with Codex](https://img.shields.io/badge/Built%20with-Codex-10A37F.svg?style=for-the-badge&logo=openaigym&logoColor=white)](https://openai.com/codex)
+[![Reviewed by CodeRabbit](https://img.shields.io/badge/Reviewed%20by-CodeRabbit-FF570A.svg?style=for-the-badge&logo=coderabbit&logoColor=white)](https://www.coderabbit.ai)
 
 ## Our social networks
 
