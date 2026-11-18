@@ -7,6 +7,8 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## 0.2.2 Under development
 
+- fix: make the BSD-3-Clause license recognizable without changing its terms or attribution.
+
 ## 0.2.1 October 23, 2026
 
 - docs: integrate hosted guides, API and skill; align package metadata and BSD license detection.
